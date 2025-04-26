@@ -1,0 +1,19 @@
+{
+  "sentiment_analysis": {
+    "RandomForest": "/home/runner/workspace/models/automl/sentiment_analysis_RandomForest.pkl",
+    "RandomForest_metadata": {
+      "accuracy": 0.6,
+      "training_examples": 25,
+      "classes": [
+        "positive",
+        "neutral",
+        "negative"
+      ],
+      "timestamp": "2025-04-26T16:41:30.619347"
+    }
+  },
+  "entity_recognition": {},
+  "question_answering": {},
+  "conversation_generation": {},
+  "image_captioning": {}
+}
