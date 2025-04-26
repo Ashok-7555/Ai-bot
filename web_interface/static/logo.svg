@@ -1,0 +1,67 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .robot-head { fill: #0073e6; }
+    .robot-body { fill: #004080; }
+    .antenna { stroke: #003366; stroke-width: 4; }
+    .antenna-ball { fill: #003366; }
+    .eye { fill: white; }
+    .pupil { fill: #003366; }
+    .mouth { fill: none; stroke: white; stroke-width: 3; stroke-linecap: round; }
+    .light { fill: #4d9fff; }
+    .button { fill: #0059b3; }
+    .text { font-family: 'Arial', sans-serif; font-weight: bold; }
+    .g { fill: #0073e6; }
+    .a { fill: #004080; }
+    .k { fill: #0059b3; }
+    .r { fill: #003366; }
+  </style>
+  
+  <!-- Circle background -->
+  <circle cx="100" cy="100" r="90" fill="#f0f8ff" stroke="#e6f0ff" stroke-width="10" />
+  
+  <!-- Robot head -->
+  <circle class="robot-head" cx="100" cy="100" r="50" />
+  
+  <!-- Robot antennas -->
+  <line class="antenna" x1="85" y1="55" x2="75" y2="35" />
+  <line class="antenna" x1="115" y1="55" x2="125" y2="35" />
+  <circle class="antenna-ball" cx="75" cy="30" r="5" />
+  <circle class="antenna-ball" cx="125" cy="30" r="5" />
+  
+  <!-- Robot eyes -->
+  <circle class="eye" cx="80" cy="90" r="12" />
+  <circle class="eye" cx="120" cy="90" r="12" />
+  <circle class="pupil" cx="80" cy="90" r="6">
+    <animate attributeName="cy" values="90;88;90;92;90" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <circle class="pupil" cx="120" cy="90" r="6">
+    <animate attributeName="cy" values="90;88;90;92;90" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Robot mouth -->
+  <path class="mouth" d="M85,115 Q100,125 115,115">
+    <animate attributeName="d" values="M85,115 Q100,125 115,115;M85,115 Q100,130 115,115;M85,115 Q100,125 115,115" dur="5s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Lights -->
+  <circle class="light" cx="70" cy="70" r="5">
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle class="light" cx="130" cy="70" r="5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Control panel on forehead -->
+  <rect class="robot-body" x="85" y="65" width="30" height="10" rx="3" />
+  <circle class="button" cx="95" cy="70" r="2" />
+  <circle class="button" cx="105" cy="70" r="2" />
+  
+  <!-- GAKR Text -->
+  <text x="40" y="175" class="text" font-size="22">
+    <tspan class="g">G</tspan>
+    <tspan class="a">A</tspan>
+    <tspan class="k">K</tspan>
+    <tspan class="r">R</tspan>
+    <tspan font-size="12" fill="#004080"> AI</tspan>
+  </text>
+</svg>
