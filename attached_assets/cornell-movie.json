@@ -1,0 +1,42 @@
+[
+  {
+    "input": "Hello.",
+    "output": "Hi, how are you doing?"
+  },
+  {
+    "input": "What's up?",
+    "output": "Not much. What's new with you?"
+  },
+  {
+    "input": "I'm good, thanks.",
+    "output": "Glad to hear that."
+  },
+  {
+    "input": "How's your day?",
+    "output": "It's been great. Thanks for asking."
+  },
+  {
+    "input": "What do you think about movies?",
+    "output": "I enjoy watching them, especially classics."
+  },
+  {
+    "input": "Do you like music?",
+    "output": "Yes, music is a universal language that connects people."
+  },
+  {
+    "input": "What's your favorite food?",
+    "output": "If I could eat, I'd probably enjoy trying different cuisines."
+  },
+  {
+    "input": "Can you help me?",
+    "output": "Of course, what do you need help with?"
+  },
+  {
+    "input": "Tell me about yourself.",
+    "output": "I'm an AI assistant designed to have natural conversations and provide information."
+  },
+  {
+    "input": "Thanks for your help.",
+    "output": "You're welcome! I'm happy to assist anytime."
+  }
+]

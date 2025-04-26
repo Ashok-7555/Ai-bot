@@ -1,0 +1,230 @@
+[
+  {
+    "input": "Hello.",
+    "output": "Hi, how are you doing?"
+  },
+  {
+    "input": "What's up?",
+    "output": "Not much. What's new with you?"
+  },
+  {
+    "input": "I'm good, thanks.",
+    "output": "Glad to hear that."
+  },
+  {
+    "input": "How's your day?",
+    "output": "It's been great. Thanks for asking."
+  },
+  {
+    "input": "What do you think about movies?",
+    "output": "I enjoy watching them, especially classics."
+  },
+  {
+    "input": "Do you like music?",
+    "output": "Yes, music is a universal language that connects people."
+  },
+  {
+    "input": "What's your favorite food?",
+    "output": "If I could eat, I'd probably enjoy trying different cuisines."
+  },
+  {
+    "input": "Can you help me?",
+    "output": "Of course, what do you need help with?"
+  },
+  {
+    "input": "Tell me about yourself.",
+    "output": "I'm an AI assistant designed to have natural conversations and provide information."
+  },
+  {
+    "input": "Thanks for your help.",
+    "output": "You're welcome! I'm happy to assist anytime."
+  },
+  {
+    "input": "What is your name?",
+    "output": "I am GAKR, an AI chatbot built to process and analyze text without external API dependencies."
+  },
+  {
+    "input": "Who are you?",
+    "output": "I'm GAKR, an AI assistant designed to have conversations and provide information on various topics without needing external APIs."
+  },
+  {
+    "input": "Tell me a joke.",
+    "output": "Why don't scientists trust atoms? Because they make up everything!"
+  },
+  {
+    "input": "Can you tell me a joke?",
+    "output": "Why did the chatbot cross the road? To get to the other website!"
+  },
+  {
+    "input": "How are you?",
+    "output": "I'm functioning well, thank you for asking! How can I assist you today?"
+  },
+  {
+    "input": "How are you doing?",
+    "output": "I'm doing great! Thank you for asking. How about you?"
+  },
+  {
+    "input": "What can you do?",
+    "output": "I can analyze sentiment, answer questions, and have conversations with you. I'm designed to work without external API dependencies."
+  },
+  {
+    "input": "Tell me your capabilities",
+    "output": "My capabilities include providing information on various topics, engaging in conversation, responding to questions, and analyzing the sentiment of messages."
+  },
+  {
+    "input": "What is Python?",
+    "output": "Python is an interpreted, high-level programming language known for its readability and versatility. It's widely used in web development, data analysis, artificial intelligence, and scientific computing."
+  },
+  {
+    "input": "Could you explain Python?",
+    "output": "Python is a popular programming language valued for its simplicity and readability. It uses indentation for code blocks and has a vast ecosystem of libraries for various applications from web development to machine learning."
+  },
+  {
+    "input": "What is AI?",
+    "output": "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. The term may also be applied to any machine that exhibits traits associated with a human mind such as learning and problem-solving."
+  },
+  {
+    "input": "Explain AI to me",
+    "output": "Artificial Intelligence or AI is technology that enables computers to perform tasks that typically require human intelligence. This includes learning from data, reasoning through problems, understanding language, and making decisions."
+  },
+  {
+    "input": "Tell me about GAKR.",
+    "output": "GAKR is an AI chatbot built to process and analyze text using pre-trained models without requiring external API dependencies. It can provide information, answer questions, and engage in conversations about various topics."
+  },
+  {
+    "input": "What is HTML?",
+    "output": "HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser. It defines the structure and content of web pages."
+  },
+  {
+    "input": "What does HTML mean?",
+    "output": "HTML stands for HyperText Markup Language. It's the foundation of web pages, providing the structure and content that browsers interpret to display websites."
+  },
+  {
+    "input": "What does BTech mean?",
+    "output": "Bachelor of Technology (BTech) is an undergraduate academic degree conferred after completion of a four-year program in engineering or technology fields. It focuses on applying technological and scientific knowledge to solve engineering problems."
+  },
+  {
+    "input": "What is a library?",
+    "output": "A library is a collection of sources of information and similar resources, made accessible to a defined community for reference or borrowing. It provides physical or digital access to material, and may be a physical location or a virtual space."
+  },
+  {
+    "input": "What is machine learning?",
+    "output": "Machine Learning is a branch of artificial intelligence that focuses on using data and algorithms to improve accuracy progressively. It involves computer algorithms that can access data and use it to learn for themselves."
+  },
+  {
+    "input": "Explain machine learning",
+    "output": "Machine learning is a field of AI where computers learn patterns from data without being explicitly programmed. The algorithms improve automatically through experience, allowing them to make predictions or decisions based on new data."
+  },
+  {
+    "input": "What is data science?",
+    "output": "Data Science is an interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from structured and unstructured data."
+  },
+  {
+    "input": "Tell me about animals.",
+    "output": "Animals are multicellular, eukaryotic organisms in the biological kingdom Animalia. They include mammals, birds, reptiles, amphibians, fish, and invertebrates like insects and crustaceans. Animals are characterized by their ability to move, consume organic material, and respond to stimuli."
+  },
+  {
+    "input": "What is a book?",
+    "output": "A book is a medium for recording information in the form of writing or images, typically composed of many pages bound together and protected by a cover. Books can contain fiction, non-fiction, poetry, reference material, or instructional content."
+  },
+  {
+    "input": "What does the @ symbol mean?",
+    "output": "The at sign (@) is a symbol used in email addresses to separate the username from the domain name. It's also used in social media platforms to tag or mention users (like @username), and in programming languages for various purposes depending on the language."
+  },
+  {
+    "input": "What is a movie?",
+    "output": "A movie (or film) is a series of still images that, when shown on a screen, create the illusion of moving images. Movies are a popular form of entertainment and art that tells stories or documentaries through the combination of images, sound, and special effects."
+  },
+  {
+    "input": "Tell me about software engineering.",
+    "output": "Software Engineering is the systematic application of engineering approaches to the development of software. It involves applying engineering principles to software creation, including design, development, testing, and maintenance."
+  },
+  {
+    "input": "What does software engineering involve?",
+    "output": "Software engineering involves designing, developing, testing, and maintaining software using engineering principles. It encompasses requirements analysis, system design, coding, testing, deployment, and ongoing maintenance throughout the software lifecycle."
+  },
+  {
+    "input": "What is text mining?",
+    "output": "Text Mining is the process of deriving high-quality information from text. It involves using data mining algorithms to find patterns and relationships within textual data. Text mining tasks include text categorization, clustering, concept extraction, sentiment analysis, and document summarization."
+  },
+  {
+    "input": "What is 5+3?",
+    "output": "The result of 5 + 3 is 8."
+  },
+  {
+    "input": "Can you calculate 5+3?",
+    "output": "Yes, 5 + 3 equals 8."
+  },
+  {
+    "input": "What is 10*4?",
+    "output": "The result of 10 * 4 is 40."
+  },
+  {
+    "input": "What is CSE?",
+    "output": "Computer Science and Engineering (CSE) is an academic program that integrates the field of computer science and computer engineering. The program typically covers both the theoretical and practical aspects of computing."
+  },
+  {
+    "input": "What is today's date?",
+    "output": "I can tell you that today is {{DATE}}."
+  },
+  {
+    "input": "What time is it?",
+    "output": "The current time is {{TIME}}."
+  },
+  {
+    "input": "How do I learn programming?",
+    "output": "To learn programming, start with a beginner-friendly language like Python or JavaScript. Use online resources like tutorials, coding platforms, and documentation. Practice regularly by working on small projects. Join programming communities to ask questions and share knowledge. Consider taking structured courses or bootcamps for more guided learning."
+  },
+  {
+    "input": "I want to learn to code",
+    "output": "Learning to code is a great decision! Begin with a language that matches your goals - Python for data science, JavaScript for web development, or Swift for iOS apps. Use free resources like freeCodeCamp, Codecademy, or YouTube tutorials. Practice consistently with small projects that interest you, and join coding communities for support and feedback."
+  },
+  {
+    "input": "What is the difference between CSS and HTML?",
+    "output": "HTML (HyperText Markup Language) defines the structure and content of web pages, while CSS (Cascading Style Sheets) controls their appearance and layout. HTML uses tags to organize content like headings, paragraphs, and images, while CSS handles styling aspects like colors, fonts, spacing, and responsive design."
+  },
+  {
+    "input": "Tell me about neural networks",
+    "output": "Neural networks are computing systems inspired by the biological neural networks in animal brains. They consist of interconnected nodes (neurons) organized in layers that can learn patterns from data. Neural networks are fundamental to deep learning and are used for tasks like image recognition, natural language processing, and generating creative content."
+  },
+  {
+    "input": "What is cloud computing?",
+    "output": "Cloud computing is the delivery of computing services\u2014including servers, storage, databases, networking, software, and intelligence\u2014over the internet to offer faster innovation, flexible resources, and economies of scale. These services are typically pay-as-you-go, allowing businesses to avoid large upfront infrastructure costs."
+  },
+  {
+    "input": "Explain blockchain technology",
+    "output": "Blockchain is a distributed ledger technology that maintains a continuously growing list of records (blocks) that are linked and secured using cryptography. Each block contains a timestamp, transaction data, and a reference to the previous block, creating an immutable chain. This technology enables secure, transparent, and decentralized transactions without requiring a central authority."
+  },
+  {
+    "input": "I'm feeling sad",
+    "output": "I'm sorry to hear that you're feeling sad. Remember that it's okay to experience difficult emotions sometimes. Consider talking with someone you trust, engaging in activities you enjoy, or practicing self-care. If your feelings persist, speaking with a mental health professional can be very helpful."
+  },
+  {
+    "input": "I'm happy today",
+    "output": "That's wonderful to hear! Happiness is worth celebrating. What's contributing to your good mood today? Enjoying those positive moments can help extend the feeling."
+  },
+  {
+    "input": "Tell me about cybersecurity",
+    "output": "Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyberattacks typically aim to access, change, or destroy sensitive information, extort money, or interrupt business processes. Effective cybersecurity involves multiple layers of protection spread across computers, networks, programs, and data."
+  },
+  {
+    "input": "What are some common programming languages?",
+    "output": "Some common programming languages include Python (versatile, great for beginners), JavaScript (web development), Java (enterprise applications), C++ (system software, games), C# (Windows applications), PHP (web development), Swift (iOS apps), Kotlin (Android apps), R (data analysis), and Go (system programming). Each has different strengths and use cases."
+  },
+  {
+    "input": "How does the internet work?",
+    "output": "The internet works through a global network of interconnected computers that communicate via standardized protocols, primarily TCP/IP. When you access a website, your device sends a request to a server hosting that site. This request travels through your ISP, across multiple routers and switches, reaching the destination server which then sends the requested data back through a similar path to your device."
+  },
+  {
+    "input": "What's the best programming language to learn first?",
+    "output": "Python is often recommended as the best first programming language because of its readable syntax, versatility, and extensive learning resources. However, the 'best' language depends on your goals: JavaScript for web development, Swift for iOS apps, or Kotlin for Android development. Focus on learning programming concepts rather than just syntax, as these fundamentals transfer between languages."
+  },
+  {
+    "input": "Tell me about virtual reality",
+    "output": "Virtual Reality (VR) is a simulated experience that can be similar to or completely different from the real world. It uses computer technology to create a virtual environment that users can interact with in a way that feels immersive. VR typically requires special equipment like headsets and sometimes motion controllers, and has applications in gaming, education, healthcare, training, and many other fields."
+  },
+  {
+    "input": "What is a database?",
+    "output": "A database is an organized collection of structured information or data, typically stored electronically in a computer system. Databases are designed to efficiently manage, store, and retrieve data, and are fundamental to many applications and services we use daily. Common types include relational databases (using SQL), NoSQL databases, graph databases, and document databases."
+  }
+]

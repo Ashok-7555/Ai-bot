@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAKR AI - Like Gemini</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .gemini-home-layout {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gemini-home-header {
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        
+        .gemini-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .gemini-brand-logo {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gemini-brand-text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        
+        .gemini-welcome-text {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .gemini-welcome-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .gemini-welcome-text p {
+            font-size: 1.125rem;
+            color: var(--bs-secondary-color);
+        }
+        
+        .gemini-input-area {
+            width: 100%;
+            max-width: 650px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .gemini-input-container {
+            position: relative;
+            border-radius: 24px;
+            border: 1px solid var(--bs-border-color);
+            background: var(--bs-body-bg);
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        
+        .gemini-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 0.5rem;
+            height: 24px;
+            outline: none;
+            color: var(--bs-body-color);
+            font-size: 1rem;
+        }
+        
+        .gemini-input:focus {
+            outline: none;
+        }
+        
+        .gemini-input-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .gemini-action-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--bs-secondary-color);
+            transition: background-color 0.2s;
+        }
+        
+        .gemini-action-button:hover {
+            background-color: var(--bs-tertiary-bg);
+        }
+        
+        .gemini-submit-button {
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            max-width: 650px;
+        }
+        
+        .gemini-suggestion {
+            background-color: var(--bs-tertiary-bg);
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .gemini-suggestion:hover {
+            background-color: var(--bs-secondary-bg);
+        }
+        
+        .gemini-footer {
+            padding: 1rem;
+            text-align: center;
+            color: var(--bs-secondary-color);
+            font-size: 0.875rem;
+        }
+
+        /* Login button styling */
+        .gemini-login-button {
+            color: var(--gakr-blue);
+            text-decoration: none;
+            background: transparent;
+            border: 1px solid var(--gakr-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+        
+        .gemini-login-button:hover {
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="gemini-home-layout">
+        <header class="gemini-home-header">
+            <div class="gemini-logo-area">
+                <div class="gemini-brand-logo">
+                    <i class="fas fa-robot" style="color: var(--gakr-blue);"></i>
+                </div>
+                <div class="gemini-brand-text">GAKR AI</div>
+            </div>
+            
+            <div class="gemini-nav-controls">
+                <a href="/login" class="gemini-login-button">Sign in / Register</a>
+            </div>
+        </header>
+        
+        <main class="gemini-main-content">
+            <div class="gemini-welcome-text">
+                <h1>How can I help you today?</h1>
+                <p>GAKR AI is your AI assistant for finding solutions and answering questions</p>
+            </div>
+            
+            <div class="gemini-input-area">
+                <div class="gemini-input-container">
+                    <input type="text" class="gemini-input" id="searchInput" placeholder="Ask me anything...">
+                    <div class="gemini-input-actions">
+                        <div class="gemini-action-button">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="gemini-action-button gemini-submit-button" id="searchButton">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gemini-suggestions">
+                <div class="gemini-suggestion">What can you do?</div>
+                <div class="gemini-suggestion">How does AI work?</div>
+                <div class="gemini-suggestion">Write a poem about technology</div>
+                <div class="gemini-suggestion">Explain quantum computing</div>
+            </div>
+        </main>
+        
+        <footer class="gemini-footer">
+            <div>GAKR AI - Powered by Advanced Local AI</div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const suggestionButtons = document.querySelectorAll('.gemini-suggestion');
+            
+            // Search button click handler
+            searchButton.addEventListener('click', function() {
+                submitSearch();
+            });
+            
+            // Enter key handler
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    submitSearch();
+                }
+            });
+            
+            // Handle suggestion clicks
+            suggestionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    searchInput.value = this.textContent;
+                    submitSearch();
+                });
+            });
+            
+            // Submit search query
+            function submitSearch() {
+                const query = searchInput.value.trim();
+                if (query) {
+                    // Redirect to chat page with query
+                    window.location.href = `/chat?q=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

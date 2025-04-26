@@ -1,0 +1,77 @@
+[
+  {
+    "name": "The Pile",
+    "link": "https://huggingface.co/datasets/the_pile",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "C4 (Colossal Clean Crawled Corpus)",
+    "link": "https://huggingface.co/datasets/c4",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "Common Crawl",
+    "link": "https://commoncrawl.org/",
+    "source": "commoncrawl.org"
+  },
+  {
+    "name": "Wikipedia (English)",
+    "link": "https://en.wikipedia.org/wiki/Wikipedia:Database_download",
+    "source": "Wikimedia Downloads or Hugging Face Datasets"
+  },
+  {
+    "name": "BookCorpus2",
+    "link": "https://huggingface.co/datasets?search=bookcorpus2",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "OpenWebText",
+    "link": "https://huggingface.co/datasets/openwebtext",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "AlpacaData",
+    "link": "https://github.com/search?q=AlpacaData",
+    "source": "GitHub search"
+  },
+  {
+    "name": "Tulu v2",
+    "link": "https://huggingface.co/datasets?search=tulu_v2",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "Natural Questions",
+    "link": "https://huggingface.co/datasets/natural_questions",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "TriviaQA",
+    "link": "https://huggingface.co/datasets/trivia_qa",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "Cornell Movie-Dialogs Corpus",
+    "link": "https://huggingface.co/datasets/cornell_movie_dialogs",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "DailyDialog",
+    "link": "https://huggingface.co/datasets/daily_dialog",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "Persona-Chat",
+    "link": "https://huggingface.co/datasets/persona_chat",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "Blended Skill Talk",
+    "link": "https://huggingface.co/datasets/blended_skill_talk",
+    "source": "Hugging Face Datasets"
+  },
+  {
+    "name": "MultiWOZ",
+    "link": "https://huggingface.co/datasets/multi_woz_v22",
+    "source": "Hugging Face Datasets"
+  }
+]

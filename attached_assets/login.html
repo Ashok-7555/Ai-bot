@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAKR AI - Sign In</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .gemini-login-layout {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gemini-home-header {
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        
+        .gemini-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .gemini-brand-logo {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gemini-brand-text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+        
+        .gemini-login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--bs-border-color);
+            background-color: var(--bs-body-bg);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .gemini-login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .gemini-login-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(66, 133, 244, 0.1);
+            color: var(--gakr-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .gemini-login-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-field-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .gemini-field-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--bs-secondary-color);
+        }
+        
+        .gemini-field-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: var(--bs-tertiary-bg);
+            border: 1px solid var(--bs-border-color);
+            border-radius: 8px;
+            color: var(--bs-body-color);
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .gemini-field-input:focus {
+            outline: none;
+            border-color: var(--gakr-blue);
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+        
+        .gemini-button-primary {
+            background-color: var(--gakr-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .gemini-button-primary:hover {
+            background-color: #3b78e7;
+        }
+        
+        .gemini-auth-links {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .gemini-auth-link {
+            color: var(--gakr-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .gemini-auth-link:hover {
+            text-decoration: underline;
+        }
+        
+        .gemini-guest-link {
+            display: block;
+            text-align: center;
+            margin-top: 0.75rem;
+            color: var(--bs-secondary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .gemini-guest-link:hover {
+            color: var(--bs-body-color);
+        }
+        
+        .gemini-footer {
+            padding: 1rem;
+            text-align: center;
+            color: var(--bs-secondary-color);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="gemini-login-layout">
+        <header class="gemini-home-header">
+            <div class="gemini-logo-area">
+                <a href="/" class="gemini-brand-logo">
+                    <i class="fas fa-robot" style="color: var(--gakr-blue);"></i>
+                </a>
+                <a href="/" class="gemini-brand-text" style="text-decoration: none;">GAKR AI</a>
+            </div>
+        </header>
+        
+        <main class="gemini-main-content">
+            <div class="gemini-login-container">
+                <div class="gemini-login-header">
+                    <div class="gemini-login-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h1 class="gemini-login-title">Sign in to GAKR AI</h1>
+                    <p>Access your account and chat history</p>
+                </div>
+                
+                <form action="/login" method="post">
+                    <div class="gemini-field-group">
+                        <label for="email" class="gemini-field-label">Email</label>
+                        <input type="email" id="email" name="email" class="gemini-field-input" required>
+                    </div>
+                    
+                    <div class="gemini-field-group">
+                        <label for="password" class="gemini-field-label">Password</label>
+                        <input type="password" id="password" name="password" class="gemini-field-input" required>
+                    </div>
+                    
+                    <button type="submit" class="gemini-button-primary">Sign in</button>
+                    
+                    <div class="gemini-auth-links">
+                        <a href="/register" class="gemini-auth-link">Create an account</a>
+                        <a href="/chat" class="gemini-guest-link">Continue as guest</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        
+        <footer class="gemini-footer">
+            <div>GAKR AI - Powered by Advanced Local AI</div>
+        </footer>
+    </div>
+</body>
+</html>

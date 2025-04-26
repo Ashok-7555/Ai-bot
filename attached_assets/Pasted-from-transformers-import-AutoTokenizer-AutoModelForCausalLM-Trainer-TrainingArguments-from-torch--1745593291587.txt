@@ -1,0 +1,64 @@
+from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments
+from torch.utils.data import Dataset
+
+# Assuming 'gakr' is a variant of a causal language model like GPT
+model_name = "your_gakr_model_name_or_path" # If it's a custom architecture, you'll need to load it differently
+tokenizer_name = "corresponding_tokenizer_name" # If applicable
+
+tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+
+class YourDataset(Dataset):
+    def __init__(self, inputs, outputs, tokenizer, max_length):
+        self.inputs = inputs
+        self.outputs = outputs
+        self.tokenizer = tokenizer
+        self.max_length = max_length
+
+    def __len__(self):
+        return len(self.inputs)
+
+    def __getitem__(self, idx):
+        input_text = self.inputs[idx]
+        output_text = self.outputs[idx]
+
+        input_encoding = self.tokenizer(input_text, truncation=True, padding='max_length', max_length=self.max_length, return_tensors='pt')
+        output_encoding = self.tokenizer(output_text, truncation=True, padding='max_length', max_length=self.max_length, return_tensors='pt')
+
+        return {
+            'input_ids': input_encoding['input_ids'].squeeze(),
+            'attention_mask': input_encoding['attention_mask'].squeeze(),
+            'labels': output_encoding['input_ids'].squeeze() # Labels are often the target input IDs for LM tasks
+        }
+
+# Your training data
+train_inputs = ["What is your name?", "Tell me a joke."]
+train_outputs = ["I am gakr.", "Why don't scientists trust atoms? Because they make up everything!"]
+
+# Create the dataset
+max_seq_length = 128
+train_dataset = YourDataset(train_inputs, train_outputs, tokenizer, max_seq_length)
+
+# Define training arguments
+training_args = TrainingArguments(
+    output_dir="./gakr_trained",
+    per_device_train_batch_size=8,
+    num_train_epochs=10,
+    learning_rate=5e-5,
+    save_steps=100,
+    logging_steps=100,
+)
+
+# Create the Trainer
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_dataset,
+    tokenizer=tokenizer,
+)
+
+# Train the model
+trainer.train()
+
+# Save the trained model
+trainer.save_model("./gakr_trained")

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat History - GAKR AI</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        :root {
+            --gemini-blue: #8ab4f8;
+            --gemini-blue-light: rgba(138, 180, 248, 0.15);
+            --gemini-purple: #c58af9;
+            --gemini-purple-light: rgba(197, 138, 249, 0.15);
+            --radius-lg: 12px;
+            --radius-sm: 8px;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-right: 0.75rem;
+        }
+        
+        .history-header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--bs-border-color);
+            margin-bottom: 2rem;
+        }
+        
+        .chat-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--bs-border-color);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: var(--bs-body-color);
+            display: block;
+            overflow: hidden;
+        }
+        
+        .chat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--gemini-blue);
+        }
+        
+        .chat-card-header {
+            padding: 1rem 1.5rem;
+            background-color: var(--bs-tertiary-bg);
+            border-bottom: 1px solid var(--bs-border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chat-card-body {
+            padding: 1.5rem;
+        }
+        
+        .chat-card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--bs-border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--bs-body-bg);
+        }
+        
+        .chat-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gemini-blue-light);
+            color: var(--gemini-blue);
+            margin-right: 1rem;
+        }
+        
+        .chat-preview {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: var(--bs-secondary-color);
+        }
+        
+        .chat-meta {
+            font-size: 0.875rem;
+            color: var(--bs-secondary-color);
+        }
+        
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .badge-tag {
+            background-color: var(--gemini-purple-light);
+            color: var(--gemini-purple);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+        }
+        
+        .badge-model {
+            background-color: var(--gemini-blue-light);
+            color: var(--gemini-blue);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+        
+        .filter-item {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+        
+        .filter-item:hover {
+            border-color: var(--gemini-blue);
+            background-color: var(--gemini-blue-light);
+        }
+        
+        .filter-item.active {
+            background-color: var(--gemini-blue-light);
+            border-color: var(--gemini-blue);
+        }
+        
+        .filter-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chat-actions {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .chat-card:hover .chat-actions {
+            opacity: 1;
+        }
+        
+        .pagination-container {
+            margin-top: 2rem;
+        }
+        
+        .pagination .page-link {
+            border-radius: var(--radius-sm);
+            margin: 0 0.25rem;
+            padding: 0.5rem 0.75rem;
+        }
+        
+        .pagination .page-item.active .page-link {
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            border-color: transparent;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <span>GAKR AI</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/history">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn btn-outline py-2 px-3" href="/logout">
+                            <i class="fas fa-sign-out-alt me-1"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="history-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="h3 mb-2">Chat History</h1>
+                    <p class="text-secondary mb-0">Browse your previous conversations</p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end mt-3 mt-md-0">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search chats...">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow-1 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="filter-section">
+                        <h5>Date Range</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="filter-item active">All Time</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">Last Week</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">Last Month</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">Last Year</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h5>AI Model</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="filter-item active">All Models</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">Enhanced</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">Simple</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h5>Topics</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="filter-item active">All Topics</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">AI & ML</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">Programming</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">Datasets</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="filter-item">General</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-plus me-1"></i>New Chat
+                        </button>
+                        <button type="button" class="btn btn-outline text-danger">
+                            <i class="fas fa-trash-alt me-1"></i>Clear History
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9">
+                    <!-- Chat History List -->
+                    <div class="chat-list">
+                        <!-- Chat Card 1 -->
+                        <a href="/chat?id=1234" class="chat-card">
+                            <div class="chat-card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="chat-icon">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="h6 mb-0">Machine Learning Applications</h5>
+                                    </div>
+                                </div>
+                                <div class="chat-meta">
+                                    2 hours ago
+                                </div>
+                            </div>
+                            <div class="chat-card-body">
+                                <div class="chat-preview">
+                                    <p>You: Tell me about machine learning applications.</p>
+                                    <p>GAKR AI: Machine learning applications span across various industries including healthcare for disease diagnosis, finance for fraud detection, retail for personalized recommendations, transportation for autonomous vehicles, and manufacturing for predictive maintenance. These applications leverage different ML techniques like supervised learning, unsupervised learning, and reinforcement learning...</p>
+                                </div>
+                            </div>
+                            <div class="chat-card-footer">
+                                <div class="badges-container">
+                                    <span class="badge-model">Enhanced Model</span>
+                                    <span class="badge-tag">Machine Learning</span>
+                                    <span class="badge-tag">AI</span>
+                                </div>
+                                <div class="chat-actions">
+                                    <button class="btn btn-sm btn-outline-danger" onclick="event.preventDefault()">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Chat Card 2 -->
+                        <a href="/chat?id=1233" class="chat-card">
+                            <div class="chat-card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="chat-icon">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="h6 mb-0">Neural Network Implementation</h5>
+                                    </div>
+                                </div>
+                                <div class="chat-meta">
+                                    Yesterday
+                                </div>
+                            </div>
+                            <div class="chat-card-body">
+                                <div class="chat-preview">
+                                    <p>You: How can I implement a neural network in Python?</p>
+                                    <p>GAKR AI: Implementing a neural network in Python can be done using several libraries, with TensorFlow and PyTorch being the most popular. Here's a basic approach using TensorFlow: First, install TensorFlow using pip. Then, import the necessary modules and prepare your data. Define your network architecture...</p>
+                                </div>
+                            </div>
+                            <div class="chat-card-footer">
+                                <div class="badges-container">
+                                    <span class="badge-model">Enhanced Model</span>
+                                    <span class="badge-tag">Programming</span>
+                                    <span class="badge-tag">Neural Networks</span>
+                                </div>
+                                <div class="chat-actions">
+                                    <button class="btn btn-sm btn-outline-danger" onclick="event.preventDefault()">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Chat Card 3 -->
+                        <a href="/chat?id=1232" class="chat-card">
+                            <div class="chat-card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="chat-icon">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="h6 mb-0">Training Datasets Overview</h5>
+                                    </div>
+                                </div>
+                                <div class="chat-meta">
+                                    3 days ago
+                                </div>
+                            </div>
+                            <div class="chat-card-body">
+                                <div class="chat-preview">
+                                    <p>You: What datasets are you trained on?</p>
+                                    <p>GAKR AI: I'm trained on 139 specialized examples from several datasets, including AI Technical Data (72 examples), Cornell Movie Dialogs (25 examples), Training Datasets Information (15 examples), and AI Capabilities Reference (27 examples). These datasets provide me with knowledge about AI concepts, conversational patterns, and technical information...</p>
+                                </div>
+                            </div>
+                            <div class="chat-card-footer">
+                                <div class="badges-container">
+                                    <span class="badge-model">Simple Model</span>
+                                    <span class="badge-tag">Datasets</span>
+                                </div>
+                                <div class="chat-actions">
+                                    <button class="btn btn-sm btn-outline-danger" onclick="event.preventDefault()">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- More chat cards would go here -->
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav class="pagination-container">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <!-- Empty State (hidden by default) -->
+                    <div class="empty-state" style="display: none;">
+                        <div class="empty-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="mb-3">No Chat History Found</h3>
+                        <p class="text-secondary mb-4">Your conversation history will appear here once you start chatting with GAKR AI.</p>
+                        <a href="/chat" class="btn btn-primary">Start a New Chat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-secondary mb-0">&copy; 2025 GAKR AI. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-secondary mb-0">Built with <i class="fas fa-heart text-danger"></i> for AI research</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

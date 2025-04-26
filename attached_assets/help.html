@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - GAKR AI</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        :root {
+            --gemini-blue: #8ab4f8;
+            --gemini-blue-light: rgba(138, 180, 248, 0.15);
+            --gemini-purple: #c58af9;
+            --gemini-purple-light: rgba(197, 138, 249, 0.15);
+            --radius-lg: 12px;
+            --radius-sm: 8px;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-right: 0.75rem;
+        }
+        
+        .gradient-heading {
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+        
+        .help-header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--bs-border-color);
+            margin-bottom: 2rem;
+        }
+        
+        .help-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--bs-border-color);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .help-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .help-card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+            background-color: var(--bs-tertiary-bg);
+        }
+        
+        .help-card-body {
+            padding: 1.5rem;
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gemini-blue-light), var(--gemini-purple-light));
+            color: var(--gemini-blue);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--gemini-blue);
+        }
+        
+        .faq-answer {
+            color: var(--bs-secondary-color);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--bs-border-color);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--bs-tertiary-bg);
+        }
+        
+        .nav-pills .nav-link {
+            border-radius: var(--radius-lg);
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--bs-body-color);
+        }
+        
+        .nav-pills .nav-link:hover {
+            background-color: var(--gemini-blue-light);
+        }
+        
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+            color: white;
+        }
+        
+        .nav-pills .nav-link i {
+            width: 24px;
+            margin-right: 0.5rem;
+            text-align: center;
+        }
+        
+        .contact-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--bs-border-color);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gemini-blue-light), var(--gemini-purple-light));
+            color: var(--gemini-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <span>GAKR AI</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/help">Help</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn btn-outline py-2 px-3" href="/login">
+                            <i class="fas fa-sign-in-alt me-1"></i>Sign in / Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="help-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="h2 mb-3">How can we help you?</h1>
+                    <p class="lead text-secondary mb-4">Find answers to common questions and learn how to get the most out of GAKR AI</p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for help articles...">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search me-1"></i>Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow-1 mb-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4">
+                    <div class="help-card text-center">
+                        <div class="help-card-body">
+                            <div class="category-icon mx-auto">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Getting Started</h3>
+                            <p class="text-secondary mb-4">Learn the basics of using GAKR AI with our beginner guides</p>
+                            <a href="#getting-started" class="btn btn-outline">
+                                View Guides
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="help-card text-center">
+                        <div class="help-card-body">
+                            <div class="category-icon mx-auto">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <h3 class="h5 mb-3">FAQ</h3>
+                            <p class="text-secondary mb-4">Find answers to the most commonly asked questions</p>
+                            <a href="#faq" class="btn btn-outline">
+                                View FAQs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="help-card text-center">
+                        <div class="help-card-body">
+                            <div class="category-icon mx-auto">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Contact Support</h3>
+                            <p class="text-secondary mb-4">Need more help? Reach out to our support team</p>
+                            <a href="#contact" class="btn btn-outline">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="nav flex-column nav-pills sticky-top" style="top: 2rem;">
+                        <a class="nav-link active" href="#getting-started">
+                            <i class="fas fa-rocket"></i>Getting Started
+                        </a>
+                        <a class="nav-link" href="#faq">
+                            <i class="fas fa-question-circle"></i>FAQ
+                        </a>
+                        <a class="nav-link" href="#features">
+                            <i class="fas fa-star"></i>Features
+                        </a>
+                        <a class="nav-link" href="#account">
+                            <i class="fas fa-user-circle"></i>Account
+                        </a>
+                        <a class="nav-link" href="#privacy">
+                            <i class="fas fa-shield-alt"></i>Privacy
+                        </a>
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope"></i>Contact
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9">
+                    <!-- Getting Started Section -->
+                    <section id="getting-started" class="mb-5">
+                        <h2 class="h3 mb-4 gradient-heading">Getting Started with GAKR AI</h2>
+                        
+                        <div class="help-card mb-4">
+                            <div class="help-card-header">
+                                <h3 class="h5 mb-0">How to Use GAKR AI</h3>
+                            </div>
+                            <div class="help-card-body">
+                                <p>GAKR AI is an advanced conversational assistant designed to help you with a variety of tasks. Here's how to get started:</p>
+                                
+                                <ol>
+                                    <li class="mb-2"><strong>Creating an Account:</strong> Sign up for a free account to save your chat history and personalize your experience.</li>
+                                    <li class="mb-2"><strong>Starting a Chat:</strong> Navigate to the Chat page and type your question or prompt in the input field.</li>
+                                    <li class="mb-2"><strong>Choosing a Model:</strong> Select between Enhanced and Simple models based on your needs.</li>
+                                    <li class="mb-2"><strong>Asking Questions:</strong> You can ask about AI, programming, and various other topics covered in our training datasets.</li>
+                                    <li class="mb-2"><strong>Viewing History:</strong> Access your previous conversations in the History section.</li>
+                                </ol>
+                                
+                                <div class="text-center mt-4">
+                                    <a href="/chat" class="btn btn-primary">Start Chatting Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="help-card">
+                            <div class="help-card-header">
+                                <h3 class="h5 mb-0">Tips for Effective Conversations</h3>
+                            </div>
+                            <div class="help-card-body">
+                                <p>Get the most out of GAKR AI with these helpful tips:</p>
+                                
+                                <ul>
+                                    <li class="mb-2"><strong>Be specific:</strong> The more details you provide, the more targeted the response will be.</li>
+                                    <li class="mb-2"><strong>Use the right model:</strong> Enhanced model for complex questions, Simple model for basic queries.</li>
+                                    <li class="mb-2"><strong>Maintain context:</strong> GAKR AI remembers previous messages in your conversation to provide contextual responses.</li>
+                                    <li class="mb-2"><strong>Adjust settings:</strong> Customize the number of messages kept in context to improve relevance.</li>
+                                    <li class="mb-2"><strong>Try different topics:</strong> Filter by topics like AI & ML, Programming, or Datasets for specialized knowledge.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- FAQ Section -->
+                    <section id="faq" class="mb-5">
+                        <h2 class="h3 mb-4 gradient-heading">Frequently Asked Questions</h2>
+                        
+                        <div class="help-card">
+                            <div class="help-card-header">
+                                <h3 class="h5 mb-0">General Questions</h3>
+                            </div>
+                            <div class="help-card-body">
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <i class="fas fa-question-circle me-2"></i>What is GAKR AI?
+                                    </div>
+                                    <div class="faq-answer">
+                                        GAKR AI is an advanced conversational assistant that uses local inference capabilities to provide responses without relying on external APIs. It's designed to help with various topics including AI, programming, and data science.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <i class="fas fa-question-circle me-2"></i>What datasets is GAKR AI trained on?
+                                    </div>
+                                    <div class="faq-answer">
+                                        GAKR AI is trained on 139 specialized examples from several datasets, including AI Technical Data (72 examples), Cornell Movie Dialogs (25 examples), Training Datasets Information (15 examples), and AI Capabilities Reference (27 examples).
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <i class="fas fa-question-circle me-2"></i>What's the difference between Enhanced and Simple models?
+                                    </div>
+                                    <div class="faq-answer">
+                                        The Enhanced model uses advanced pattern recognition with better context handling, making it suitable for complex questions. The Simple model provides faster responses with basic functionality, ideal for straightforward queries.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <i class="fas fa-question-circle me-2"></i>Is GAKR AI free to use?
+                                    </div>
+                                    <div class="faq-answer">
+                                        Yes, GAKR AI offers a free plan with basic features. Premium plans with additional features and higher usage limits are also available.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <i class="fas fa-question-circle me-2"></i>Does GAKR AI work offline?
+                                    </div>
+                                    <div class="faq-answer">
+                                        Yes, GAKR AI is designed with local inference capabilities, meaning core functionality works without external API dependencies. However, an internet connection is required to access the web interface.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Features Section -->
+                    <section id="features" class="mb-5">
+                        <h2 class="h3 mb-4 gradient-heading">Features & Capabilities</h2>
+                        
+                        <div class="help-card">
+                            <div class="help-card-header">
+                                <h3 class="h5 mb-0">What Can GAKR AI Do?</h3>
+                            </div>
+                            <div class="help-card-body">
+                                <p>GAKR AI offers a range of capabilities to assist you:</p>
+                                
+                                <ul>
+                                    <li class="mb-2"><strong>Answer questions</strong> about AI, machine learning, programming, and datasets</li>
+                                    <li class="mb-2"><strong>Maintain conversations</strong> with context-aware responses</li>
+                                    <li class="mb-2"><strong>Process text</strong> with advanced pattern recognition</li>
+                                    <li class="mb-2"><strong>Perform sentiment analysis</strong> on user inputs</li>
+                                    <li class="mb-2"><strong>Provide technical explanations</strong> in simple terms</li>
+                                    <li class="mb-2"><strong>Suggest resources</strong> for further learning</li>
+                                </ul>
+                                
+                                <p class="mt-3">GAKR AI continues to improve with updates and new features. Check back regularly for enhanced capabilities.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Contact Section -->
+                    <section id="contact" class="mb-5">
+                        <h2 class="h3 mb-4 gradient-heading">Contact Support</h2>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="contact-card">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <h3 class="h5 mb-3">Email Support</h3>
+                                    <p class="text-secondary mb-4">Have a question or need help? Contact our support team directly.</p>
+                                    <a href="mailto:support@gakrai.com" class="btn btn-primary">
+                                        Email Us
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="contact-card">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <h3 class="h5 mb-3">Live Chat</h3>
+                                    <p class="text-secondary mb-4">Get real-time assistance through our live chat support.</p>
+                                    <button class="btn btn-primary">
+                                        Start Chat
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="help-card">
+                            <div class="help-card-header">
+                                <h3 class="h5 mb-0">Contact Form</h3>
+                            </div>
+                            <div class="help-card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Your name">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Your email">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="5" placeholder="How can we help you?"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-secondary mb-0">&copy; 2025 GAKR AI. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-secondary mb-0">Built with <i class="fas fa-heart text-danger"></i> for AI research</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

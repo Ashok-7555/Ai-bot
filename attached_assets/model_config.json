@@ -1,0 +1,45 @@
+{
+    "sentiment_analysis": {
+        "model": "distilbert-base-uncased-finetuned-sst-2-english",
+        "fallback": "distilbert-base-uncased-finetuned-sst-2-english",
+        "description": "DistilBERT model fine-tuned for sentiment analysis",
+        "metrics": {
+            "accuracy": 0.91,
+            "f1": 0.90
+        }
+    },
+    "text_generation": {
+        "model": "distilgpt2",
+        "fallback": "distilgpt2",
+        "description": "Smaller, faster version of GPT-2 for text generation",
+        "metrics": {
+            "perplexity": 35.13
+        }
+    },
+    "question_answering": {
+        "model": "distilbert-base-cased-distilled-squad",
+        "fallback": "distilbert-base-cased-distilled-squad",
+        "description": "DistilBERT model trained on SQuAD for question answering",
+        "metrics": {
+            "exact_match": 79.1,
+            "f1": 86.9
+        }
+    },
+    "text_classification": {
+        "model": "distilbert-base-uncased-finetuned-sst-2-english",
+        "fallback": "distilbert-base-uncased-finetuned-sst-2-english",
+        "description": "DistilBERT model for text classification tasks",
+        "metrics": {
+            "accuracy": 0.91,
+            "f1": 0.90
+        }
+    },
+    "language_detection": {
+        "model": "xlm-roberta-base",
+        "fallback": "xlm-roberta-base",
+        "description": "XLM-RoBERTa model for language detection",
+        "metrics": {
+            "accuracy": 0.95
+        }
+    }
+}

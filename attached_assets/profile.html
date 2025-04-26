@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAKR AI - Profile</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .gemini-chat-layout {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+        
+        .gemini-chat-header {
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--bs-border-color);
+            height: 64px;
+        }
+        
+        .gemini-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .gemini-brand-logo {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gemini-brand-text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-profile-wrapper {
+            display: flex;
+            height: calc(100vh - 64px);
+        }
+        
+        .gemini-sidebar {
+            width: 240px;
+            border-right: 1px solid var(--bs-border-color);
+            padding: 1rem 0;
+        }
+        
+        .gemini-sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .gemini-sidebar-item {
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            color: var(--bs-body-color);
+            transition: background-color 0.2s;
+            text-decoration: none;
+        }
+        
+        .gemini-sidebar-item:hover {
+            background-color: var(--bs-tertiary-bg);
+        }
+        
+        .gemini-sidebar-item.active {
+            background-color: rgba(66, 133, 244, 0.1);
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-sidebar-icon {
+            width: 24px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .gemini-sidebar-logout {
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            color: var(--bs-danger);
+            transition: background-color 0.2s;
+            text-decoration: none;
+            margin-top: auto;
+        }
+        
+        .gemini-sidebar-logout:hover {
+            background-color: var(--bs-tertiary-bg);
+        }
+        
+        .gemini-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .gemini-profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .gemini-profile-header {
+            margin-bottom: 2rem;
+        }
+        
+        .gemini-profile-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gemini-profile-section {
+            background-color: var(--bs-body-bg);
+            border: 1px solid var(--bs-border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .gemini-profile-section-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-profile-info {
+            display: grid;
+            grid-template-columns: minmax(150px, 25%) 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gemini-profile-label {
+            color: var(--bs-secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        .gemini-profile-value {
+            font-size: 1rem;
+        }
+        
+        .gemini-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gemini-stat-card {
+            background-color: var(--bs-tertiary-bg);
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .gemini-stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(66, 133, 244, 0.1);
+            color: var(--gakr-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gemini-stat-value {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: var(--gakr-blue);
+        }
+        
+        .gemini-stat-label {
+            color: var(--bs-secondary-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="gemini-chat-layout">
+        <header class="gemini-chat-header">
+            <div class="gemini-logo-area">
+                <a href="/" class="gemini-brand-logo">
+                    <i class="fas fa-robot" style="color: var(--gakr-blue);"></i>
+                </a>
+                <a href="/" class="gemini-brand-text" style="text-decoration: none;">GAKR AI</a>
+            </div>
+        </header>
+        
+        <div class="gemini-profile-wrapper">
+            <aside class="gemini-sidebar">
+                <nav class="gemini-sidebar-menu">
+                    <a href="/chat" class="gemini-sidebar-item">
+                        <div class="gemini-sidebar-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <span>Chat</span>
+                    </a>
+                    <a href="/history" class="gemini-sidebar-item">
+                        <div class="gemini-sidebar-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <span>History</span>
+                    </a>
+                    <a href="/profile" class="gemini-sidebar-item active">
+                        <div class="gemini-sidebar-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span>Profile</span>
+                    </a>
+                </nav>
+                
+                <a href="/logout" class="gemini-sidebar-logout">
+                    <div class="gemini-sidebar-icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <span>Logout</span>
+                </a>
+            </aside>
+            
+            <main class="gemini-content">
+                <div class="gemini-profile-container">
+                    <div class="gemini-profile-header">
+                        <h1 class="gemini-profile-title">Your Profile</h1>
+                        <p>View and manage your GAKR AI account</p>
+                    </div>
+                    
+                    <div class="gemini-profile-section">
+                        <h2 class="gemini-profile-section-title">Account Information</h2>
+                        <div class="gemini-profile-info">
+                            <div class="gemini-profile-label">Name</div>
+                            <div class="gemini-profile-value">{{ username }}</div>
+                        </div>
+                        <div class="gemini-profile-info">
+                            <div class="gemini-profile-label">Email</div>
+                            <div class="gemini-profile-value">{{ email }}</div>
+                        </div>
+                        <div class="gemini-profile-info">
+                            <div class="gemini-profile-label">Account Created</div>
+                            <div class="gemini-profile-value">April 25, 2025</div>
+                        </div>
+                    </div>
+                    
+                    <div class="gemini-profile-section">
+                        <h2 class="gemini-profile-section-title">Usage Statistics</h2>
+                        <div class="gemini-stats-grid">
+                            <div class="gemini-stat-card">
+                                <div class="gemini-stat-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="gemini-stat-value">12</div>
+                                <div class="gemini-stat-label">Total Conversations</div>
+                            </div>
+                            <div class="gemini-stat-card">
+                                <div class="gemini-stat-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="gemini-stat-value">5</div>
+                                <div class="gemini-stat-label">Active Days</div>
+                            </div>
+                            <div class="gemini-stat-card">
+                                <div class="gemini-stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="gemini-stat-value">3</div>
+                                <div class="gemini-stat-label">Saved Responses</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

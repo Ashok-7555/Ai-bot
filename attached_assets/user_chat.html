@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAKR AI - Chat</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 280px;
+            background-color: var(--bs-body-bg);
+            border-right: 1px solid var(--bs-border-color);
+            z-index: 1000;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar.show {
+            transform: translateX(0);
+        }
+        
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            height: 64px;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        
+        .sidebar-content {
+            padding: 1rem;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-menu-item {
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar-menu-item:hover {
+            background-color: var(--bs-tertiary-bg);
+        }
+        
+        .sidebar-menu-item.active {
+            background-color: var(--gemini-blue-light);
+            color: var(--gakr-blue);
+        }
+        
+        .sidebar-menu-item i {
+            margin-right: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: var(--bs-body-color);
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-top: 1px solid var(--bs-border-color);
+            margin-top: auto;
+        }
+        
+        .profile-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gemini-blue-light), var(--gemini-purple-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--gakr-blue);
+        }
+        
+        .profile-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .profile-email {
+            font-size: 0.75rem;
+            color: var(--bs-secondary-color);
+        }
+        
+        @media (min-width: 992px) {
+            .gemini-container {
+                margin-left: 280px;
+                width: calc(100% - 280px);
+                max-width: 100%;
+            }
+            
+            .sidebar {
+                transform: translateX(0);
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar for authenticated users -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="header-title">
+                <div class="gemini-logo">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1 class="h5 mb-0 gakr-brand">GAKR AI</h1>
+            </div>
+        </div>
+        
+        <div class="sidebar-content d-flex flex-column h-100">
+            <nav class="sidebar-menu mb-4">
+                <a href="/chat" class="sidebar-menu-item active">
+                    <i class="fas fa-comment"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="/history" class="sidebar-menu-item">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </a>
+                <a href="/profile" class="sidebar-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+            
+            <div class="mt-auto">
+                <div class="user-profile">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="profile-name">{{ username }}</div>
+                        <div class="profile-email">{{ email }}</div>
+                    </div>
+                </div>
+                
+                <a href="/logout" class="sidebar-menu-item text-danger">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Main Gemini-style Container -->
+    <div class="gemini-container">
+        <!-- Header with logo and actions -->
+        <header class="gemini-header">
+            <div class="header-title">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="gemini-logo">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1 class="h5 mb-0 gakr-brand">GAKR AI</h1>
+            </div>
+        </header>
+
+        <!-- Main conversation container -->
+        <main id="chatMessages" class="conversation-container">
+            <!-- Welcome message for authenticated users -->
+            <div class="message ai-message" id="initialMessage">
+                <div class="message-header">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <span>GAKR AI</span>
+                </div>
+                <div class="message-content">
+                    Welcome back, {{ username }}! How can I assist you today?
+                </div>
+            </div>
+            
+            <!-- Typing indicator -->
+            <div id="typingIndicator" class="typing-indicator d-none">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </main>
+
+        <!-- Input area -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <textarea id="userInput" class="input-field" placeholder="Message GAKR AI..." rows="1"></textarea>
+                <button id="sendButton" class="send-button" disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="footer-info text-center">
+                <div>
+                    <span class="gakr-logo-text">GAKR AI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            const chatMessages = document.getElementById('chatMessages');
+            const typingIndicator = document.getElementById('typingIndicator');
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            
+            // Sidebar toggle for mobile
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('show');
+                sidebarOverlay.classList.toggle('show');
+            });
+            
+            sidebarOverlay.addEventListener('click', function() {
+                sidebar.classList.remove('show');
+                sidebarOverlay.classList.remove('show');
+            });
+            
+            // Chat functionality
+            userInput.addEventListener('input', function() {
+                sendButton.disabled = !this.value.trim();
+                
+                // Auto-resize textarea
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+            
+            userInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' && !event.shiftKey && !sendButton.disabled) {
+                    event.preventDefault();
+                    sendMessage();
+                }
+            });
+            
+            sendButton.addEventListener('click', sendMessage);
+            
+            function sendMessage() {
+                const messageText = userInput.value.trim();
+                if (!messageText) return;
+                
+                // Add user message
+                addMessage(messageText, 'user');
+                
+                // Clear input
+                userInput.value = '';
+                userInput.style.height = 'auto';
+                sendButton.disabled = true;
+                
+                // Show typing indicator
+                typingIndicator.classList.remove('d-none');
+                
+                // Scroll to bottom
+                scrollToBottom();
+                
+                // Send to server
+                fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: messageText }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide typing indicator
+                    typingIndicator.classList.add('d-none');
+                    
+                    // Add AI response
+                    let responseText = data;
+                    if (typeof data === 'object') {
+                        responseText = data.response || JSON.stringify(data);
+                    }
+                    
+                    addMessage(responseText, 'ai');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    typingIndicator.classList.add('d-none');
+                    addMessage("Sorry, I encountered an error. Please try again.", 'ai');
+                });
+            }
+            
+            function addMessage(text, type) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}-message`;
+                
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'message-header';
+                
+                const avatarDiv = document.createElement('div');
+                avatarDiv.className = 'message-avatar';
+                
+                const icon = document.createElement('i');
+                icon.className = type === 'user' ? 'fas fa-user' : 'fas fa-robot';
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = type === 'user' ? 'You' : 'GAKR AI';
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                contentDiv.textContent = text;
+                
+                avatarDiv.appendChild(icon);
+                headerDiv.appendChild(avatarDiv);
+                headerDiv.appendChild(nameSpan);
+                
+                messageDiv.appendChild(headerDiv);
+                messageDiv.appendChild(contentDiv);
+                
+                chatMessages.appendChild(messageDiv);
+                
+                scrollToBottom();
+            }
+            
+            function scrollToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
