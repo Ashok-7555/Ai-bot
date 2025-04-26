@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}GAKR AI - Login{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="wrapper bg-white rounded shadow-sm">
+                <div class="title-text">
+                    <div class="title login">Login Form</div>
+                </div>
+                <div class="form-container">
+                    <div class="form-inner">
+                        <form method="post" class="login">
+                            {% csrf_token %}
+                            
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.non_field_errors }}
+                                </div>
+                            {% endif %}
+                            
+                            <div class="field mb-3">
+                                {{ form.username }}
+                                {% if form.username.errors %}
+                                    <div class="text-danger small">
+                                        {{ form.username.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="field mb-3">
+                                {{ form.password }}
+                                {% if form.password.errors %}
+                                    <div class="text-danger small">
+                                        {{ form.password.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="pass-link mb-3">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                            
+                            <div class="field btn">
+                                <div class="btn-layer"></div>
+                                <input type="submit" value="Login">
+                            </div>
+                            
+                            <div class="signup-link mt-3">
+                                Not a member? <a href="{% url 'register' %}">Signup now</a>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <a href="{% url 'chat' %}" class="text-primary">Continue as guest</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add any login-specific JavaScript here
+    });
+</script>
+{% endblock %}

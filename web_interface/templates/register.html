@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}GAKR AI - Register{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="wrapper bg-white rounded shadow-sm">
+                <div class="title-text">
+                    <div class="title signup">Signup Form</div>
+                </div>
+                <div class="form-container">
+                    <div class="form-inner">
+                        <form method="post" class="signup">
+                            {% csrf_token %}
+                            
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.non_field_errors }}
+                                </div>
+                            {% endif %}
+                            
+                            <div class="field mb-3">
+                                {{ form.username }}
+                                {% if form.username.errors %}
+                                    <div class="text-danger small">
+                                        {{ form.username.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="field mb-3">
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="text-danger small">
+                                        {{ form.email.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="field mb-3">
+                                {{ form.password1 }}
+                                {% if form.password1.errors %}
+                                    <div class="text-danger small">
+                                        {{ form.password1.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="field mb-3">
+                                {{ form.password2 }}
+                                {% if form.password2.errors %}
+                                    <div class="text-danger small">
+                                        {{ form.password2.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="field btn">
+                                <div class="btn-layer"></div>
+                                <input type="submit" value="Signup">
+                            </div>
+                            
+                            <div class="login-link mt-3">
+                                Already a member? <a href="{% url 'login' %}">Login</a>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <a href="{% url 'chat' %}" class="text-primary">Continue as guest</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add any registration-specific JavaScript here
+    });
+</script>
+{% endblock %}

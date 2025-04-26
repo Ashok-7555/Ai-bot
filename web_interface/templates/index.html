@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block title %}GAKR AI - Welcome{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold text-primary mb-4">Welcome to GAKR AI</h1>
+                <p class="lead mb-4">
+                    A powerful AI chatbot that analyzes your prompts and provides intelligent responses.
+                    Let's start finding solutions now!
+                </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'chat' %}" class="btn btn-primary btn-lg px-4 me-md-2">
+                            <i class="fas fa-comment me-2"></i>Start Chatting
+                        </a>
+                        <a href="{% url 'history' %}" class="btn btn-outline-secondary btn-lg px-4">
+                            <i class="fas fa-history me-2"></i>View History
+                        </a>
+                    {% else %}
+                        <a href="{% url 'chat' %}" class="btn btn-primary btn-lg px-4 me-md-2">
+                            <i class="fas fa-comment me-2"></i>Try as Guest
+                        </a>
+                        <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg px-4 me-md-2">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                        </a>
+                        <a href="{% url 'register' %}" class="btn btn-outline-secondary btn-lg px-4">
+                            <i class="fas fa-user-plus me-2"></i>Register
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div class="hero-image-container">
+                    <!-- SVG illustration -->
+                    <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <style>
+                            .robot-head { fill: #0073e6; }
+                            .robot-body { fill: #004080; }
+                            .antenna { fill: #003366; }
+                            .eye { fill: white; }
+                            .pupil { fill: #003366; }
+                            .screen { fill: #eef; }
+                            .text-line { stroke: #0073e6; stroke-width: 2; }
+                            .button { fill: #0059b3; }
+                        </style>
+                        <!-- Robot illustration -->
+                        <rect class="screen" x="50" y="50" width="300" height="200" rx="10" />
+                        <!-- Robot head -->
+                        <circle class="robot-head" cx="200" cy="130" r="50" />
+                        <!-- Robot antennas -->
+                        <line class="antenna" x1="185" y1="80" x2="175" y2="60" stroke="#003366" stroke-width="4" />
+                        <line class="antenna" x1="215" y1="80" x2="225" y2="60" stroke="#003366" stroke-width="4" />
+                        <circle class="antenna" cx="175" cy="55" r="5" />
+                        <circle class="antenna" cx="225" cy="55" r="5" />
+                        <!-- Robot eyes -->
+                        <circle class="eye" cx="180" cy="120" r="12" />
+                        <circle class="eye" cx="220" cy="120" r="12" />
+                        <circle class="pupil" cx="180" cy="120" r="6" />
+                        <circle class="pupil" cx="220" cy="120" r="6" />
+                        <!-- Chat bubble -->
+                        <path d="M260 100 Q300 80 310 110 Q320 140 300 150 L295 165 L290 150 Q280 155 270 150 Q250 145 250 125 Q250 105 260 100 Z" fill="white" stroke="#0073e6" stroke-width="2" />
+                        <!-- Text lines in bubble -->
+                        <line class="text-line" x1="265" y1="120" x2="295" y2="120" />
+                        <line class="text-line" x1="265" y1="130" x2="285" y2="130" />
+                        <!-- Control panel -->
+                        <rect class="robot-body" x="150" y="180" width="100" height="20" rx="5" />
+                        <circle class="button" cx="170" cy="190" r="5" />
+                        <circle class="button" cx="190" cy="190" r="5" />
+                        <circle class="button" cx="210" cy="190" r="5" />
+                        <circle class="button" cx="230" cy="190" r="5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="fas fa-brain fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="card-title text-center">Intelligent Analysis</h3>
+                    <p class="card-text">GAKR uses advanced transformer models to understand your prompts and generate thoughtful responses.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="fas fa-comments fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="card-title text-center">Natural Conversations</h3>
+                    <p class="card-text">Engage in natural, flowing conversations with context-aware responses that remember your previous interactions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="fas fa-lock fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="card-title text-center">Privacy-Focused</h3>
+                    <p class="card-text">All processing happens on our servers, with no external API calls. Your conversations are private and secure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <h2 class="mb-4">Ready to start the conversation?</h2>
+        {% if user.is_authenticated %}
+            <a href="{% url 'chat' %}" class="btn btn-primary btn-lg px-5">Let's Chat</a>
+        {% else %}
+            <a href="{% url 'chat' %}" class="btn btn-primary btn-lg px-5">Try Now</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+
+{% block title %}GAKR AI - Help & Documentation{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group sticky-top" style="top: 1rem;">
+                <a href="#getting-started" class="list-group-item list-group-item-action">Getting Started</a>
+                <a href="#chat-interface" class="list-group-item list-group-item-action">Chat Interface</a>
+                <a href="#user-accounts" class="list-group-item list-group-item-action">User Accounts</a>
+                <a href="#conversation-history" class="list-group-item list-group-item-action">Conversation History</a>
+                <a href="#settings" class="list-group-item list-group-item-action">Settings</a>
+                <a href="#tips" class="list-group-item list-group-item-action">Tips for Better Results</a>
+                <a href="#technical" class="list-group-item list-group-item-action">Technical Information</a>
+                <a href="#faq" class="list-group-item list-group-item-action">FAQ</a>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h1 class="text-primary mb-4">GAKR AI Help Center</h1>
+                    <p class="lead">Welcome to the GAKR AI help center. Here you'll find information on how to use the chatbot and get the most out of your experience.</p>
+                </div>
+            </div>
+            
+            <div id="getting-started" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Getting Started</h3>
+                </div>
+                <div class="card-body">
+                    <h5>What is GAKR AI?</h5>
+                    <p>GAKR AI is a chatbot powered by advanced transformer models that can understand and respond to a wide variety of prompts and questions. It's designed to provide helpful, informative responses without requiring external API calls.</p>
+                    
+                    <h5>How do I start using GAKR?</h5>
+                    <p>You can start using GAKR right away:</p>
+                    <ol>
+                        <li>Visit the <a href="{% url 'index' %}">home page</a></li>
+                        <li>Click the "Try as Guest" button (or login/register if you prefer)</li>
+                        <li>Type your message in the chat box and press Enter</li>
+                        <li>GAKR will respond to your message</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div id="chat-interface" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Chat Interface</h3>
+                </div>
+                <div class="card-body">
+                    <h5>Using the Chat</h5>
+                    <p>The chat interface is straightforward:</p>
+                    <ul>
+                        <li>Your messages appear on the right side (in blue)</li>
+                        <li>GAKR's responses appear on the left side</li>
+                        <li>Type in the input box at the bottom and press Enter to send</li>
+                        <li>Conversations are saved automatically for registered users</li>
+                    </ul>
+                    
+                    <h5>Guest Mode Limitations</h5>
+                    <p>As a guest, you can have a limited number of exchanges (typically 5) before being prompted to register or log in. Guest conversations are stored only in your browser session.</p>
+                </div>
+            </div>
+            
+            <div id="user-accounts" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">User Accounts</h3>
+                </div>
+                <div class="card-body">
+                    <h5>Why Register?</h5>
+                    <p>Registered users enjoy these benefits:</p>
+                    <ul>
+                        <li>Unlimited conversations</li>
+                        <li>Conversation history saved across sessions</li>
+                        <li>Customizable settings and preferences</li>
+                        <li>Ability to pick up conversations where you left off</li>
+                    </ul>
+                    
+                    <h5>How to Register</h5>
+                    <p>Registration is simple:</p>
+                    <ol>
+                        <li>Click the "Register" button in the navigation bar</li>
+                        <li>Fill in the required information (username, email, password)</li>
+                        <li>Click "Signup"</li>
+                        <li>You'll be automatically logged in and ready to chat</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div id="conversation-history" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Conversation History</h3>
+                </div>
+                <div class="card-body">
+                    <h5>Viewing Past Conversations</h5>
+                    <p>Registered users can access their conversation history:</p>
+                    <ol>
+                        <li>Click "History" in the navigation bar</li>
+                        <li>Browse through your past conversations</li>
+                        <li>Click on any conversation to continue it</li>
+                    </ol>
+                    
+                    <h5>Managing History</h5>
+                    <p>You can manage your conversation history:</p>
+                    <ul>
+                        <li>Delete individual conversations using the trash icon</li>
+                        <li>Clear all history using the "Clear All" button</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="settings" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Settings</h3>
+                </div>
+                <div class="card-body">
+                    <h5>Customizing Your Experience</h5>
+                    <p>Registered users can customize their GAKR experience:</p>
+                    <ul>
+                        <li><strong>Theme:</strong> Choose between Light, Dark, or Blue themes</li>
+                        <li><strong>AI Model:</strong> Select which underlying model to use</li>
+                        <li><strong>Spell Check:</strong> Enable or disable automatic spelling correction</li>
+                    </ul>
+                    
+                    <h5>Accessing Settings</h5>
+                    <p>To change your settings:</p>
+                    <ol>
+                        <li>Click on your username in the navigation bar</li>
+                        <li>Select "Settings" from the dropdown menu</li>
+                        <li>Adjust your preferences</li>
+                        <li>Click "Save Settings"</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div id="tips" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Tips for Better Results</h3>
+                </div>
+                <div class="card-body">
+                    <h5>Getting the Best Responses</h5>
+                    <p>To get better responses from GAKR:</p>
+                    <ul>
+                        <li><strong>Be specific:</strong> Clear, specific questions get better answers</li>
+                        <li><strong>Provide context:</strong> Include relevant background information</li>
+                        <li><strong>Follow up:</strong> Ask follow-up questions to refine responses</li>
+                        <li><strong>Break down complex queries:</strong> Ask one thing at a time for complex topics</li>
+                    </ul>
+                    
+                    <h5>Example Queries</h5>
+                    <p>Here are some example prompts that work well:</p>
+                    <ul>
+                        <li>"Explain quantum computing in simple terms"</li>
+                        <li>"What are three ways to improve my time management?"</li>
+                        <li>"Write a short poem about autumn"</li>
+                        <li>"Help me troubleshoot why my sourdough bread isn't rising"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="technical" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Technical Information</h3>
+                </div>
+                <div class="card-body">
+                    <h5>How GAKR Works</h5>
+                    <p>GAKR AI uses advanced transformer-based language models to generate responses. Key features include:</p>
+                    <ul>
+                        <li>Offline processing (no external API calls)</li>
+                        <li>Contextual understanding of conversations</li>
+                        <li>Spelling correction for improved input handling</li>
+                        <li>Multiple model options with different capabilities</li>
+                    </ul>
+                    
+                    <h5>Privacy & Data</h5>
+                    <p>GAKR respects your privacy:</p>
+                    <ul>
+                        <li>All processing happens on our servers</li>
+                        <li>We don't share your conversations with third parties</li>
+                        <li>Your data is used only to provide the service and improve the system</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="faq" class="card shadow-sm mb-4 scroll-target">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Frequently Asked Questions</h3>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqAnswer1" aria-expanded="true" aria-controls="faqAnswer1">
+                                    Is GAKR AI free to use?
+                                </button>
+                            </h2>
+                            <div id="faqAnswer1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, GAKR AI is currently free to use for both guests and registered users. We may introduce premium features in the future, but the core functionality will remain free.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAnswer2" aria-expanded="false" aria-controls="faqAnswer2">
+                                    Can GAKR AI access the internet?
+                                </button>
+                            </h2>
+                            <div id="faqAnswer2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No, GAKR AI cannot access the internet. It relies on its pre-trained knowledge and cannot retrieve up-to-date information from the web. Its knowledge has a cutoff date from when the model was trained.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAnswer3" aria-expanded="false" aria-controls="faqAnswer3">
+                                    What should I do if GAKR gives an incorrect answer?
+                                </button>
+                            </h2>
+                            <div id="faqAnswer3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    If GAKR provides incorrect information, try rephrasing your question to get a better answer. Like all AI systems, GAKR has limitations and may occasionally provide inaccurate information. Always verify important information from authoritative sources.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAnswer4" aria-expanded="false" aria-controls="faqAnswer4">
+                                    Is there a limit to how much I can chat with GAKR?
+                                </button>
+                            </h2>
+                            <div id="faqAnswer4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Guest users are limited to 5 exchanges before being prompted to register. Registered users can have unlimited conversations, though we may implement fair usage policies if necessary to ensure service quality for all users.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAnswer5" aria-expanded="false" aria-controls="faqAnswer5">
+                                    Can I export my conversation history?
+                                </button>
+                            </h2>
+                            <div id="faqAnswer5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Currently, there isn't a built-in export feature. However, we're considering adding this functionality in a future update to allow users to download their conversation history in common formats like PDF or TXT.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Smooth scrolling for anchor links
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.list-group-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state
+                    document.querySelectorAll('.list-group-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Highlight the current section based on scroll position
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('.scroll-target').forEach(section => {
+                if (section.offsetTop <= scrollPosition + 100) {
+                    const id = section.getAttribute('id');
+                    document.querySelectorAll('.list-group-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    document.querySelector(`.list-group-item[href="#${id}"]`).classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
