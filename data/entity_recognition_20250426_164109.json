@@ -1,0 +1,367 @@
+[
+  {
+    "text": "Barack Obama visited India in 2015.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "label": "PERSON"
+      },
+      {
+        "start": 21,
+        "end": 26,
+        "label": "GPE"
+      },
+      {
+        "start": 30,
+        "end": 34,
+        "label": "DATE"
+      }
+    ]
+  },
+  {
+    "text": "Apple is headquartered in Cupertino, California.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "label": "ORG"
+      },
+      {
+        "start": 25,
+        "end": 34,
+        "label": "GPE"
+      },
+      {
+        "start": 36,
+        "end": 46,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "The Eiffel Tower is in Paris, France.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 16,
+        "label": "LOC"
+      },
+      {
+        "start": 23,
+        "end": 28,
+        "label": "GPE"
+      },
+      {
+        "start": 30,
+        "end": 36,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "Sundar Pichai is the CEO of Google.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "label": "PERSON"
+      },
+      {
+        "start": 25,
+        "end": 31,
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "text": "Amazon was founded by Jeff Bezos in Seattle.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "label": "ORG"
+      },
+      {
+        "start": 22,
+        "end": 32,
+        "label": "PERSON"
+      },
+      {
+        "start": 36,
+        "end": 43,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "The United Nations has its headquarters in New York City.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 18,
+        "label": "ORG"
+      },
+      {
+        "start": 39,
+        "end": 52,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "I will be visiting the Taj Mahal next month.",
+    "entities": [
+      {
+        "start": 20,
+        "end": 29,
+        "label": "LOC"
+      },
+      {
+        "start": 30,
+        "end": 40,
+        "label": "DATE"
+      }
+    ]
+  },
+  {
+    "text": "Shakespeare wrote Hamlet in the early 17th century.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 11,
+        "label": "PERSON"
+      },
+      {
+        "start": 18,
+        "end": 24,
+        "label": "WORK_OF_ART"
+      },
+      {
+        "start": 32,
+        "end": 47,
+        "label": "DATE"
+      }
+    ]
+  },
+  {
+    "text": "The Ganges River flows through India and Bangladesh.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 17,
+        "label": "LOC"
+      },
+      {
+        "start": 35,
+        "end": 40,
+        "label": "GPE"
+      },
+      {
+        "start": 45,
+        "end": 55,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "Elon Musk is the founder of SpaceX and Tesla.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "label": "PERSON"
+      },
+      {
+        "start": 28,
+        "end": 34,
+        "label": "ORG"
+      },
+      {
+        "start": 39,
+        "end": 44,
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "text": "The Louvre Museum is located in Paris.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 17,
+        "label": "ORG"
+      },
+      {
+        "start": 32,
+        "end": 37,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "Microsoft released Windows 10 in 2015.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "label": "ORG"
+      },
+      {
+        "start": 19,
+        "end": 29,
+        "label": "PRODUCT"
+      },
+      {
+        "start": 33,
+        "end": 37,
+        "label": "DATE"
+      }
+    ]
+  },
+  {
+    "text": "Mount Everest is the highest peak in the Himalayas.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "label": "LOC"
+      },
+      {
+        "start": 44,
+        "end": 53,
+        "label": "LOC"
+      }
+    ]
+  },
+  {
+    "text": "The company Google was founded in California.",
+    "entities": [
+      {
+        "start": 12,
+        "end": 18,
+        "label": "ORG"
+      },
+      {
+        "start": 34,
+        "end": 44,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "New Delhi is the capital of India.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "label": "GPE"
+      },
+      {
+        "start": 25,
+        "end": 30,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "The iPhone 13 was announced by Apple.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 14,
+        "label": "PRODUCT"
+      },
+      {
+        "start": 30,
+        "end": 35,
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "text": "Leonardo da Vinci painted the Mona Lisa.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "label": "PERSON"
+      },
+      {
+        "start": 30,
+        "end": 39,
+        "label": "WORK_OF_ART"
+      }
+    ]
+  },
+  {
+    "text": "The World Health Organization is based in Geneva.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 30,
+        "label": "ORG"
+      },
+      {
+        "start": 43,
+        "end": 49,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "I am planning a trip to Bangalore next week.",
+    "entities": [
+      {
+        "start": 23,
+        "end": 32,
+        "label": "GPE"
+      },
+      {
+        "start": 33,
+        "end": 42,
+        "label": "DATE"
+      }
+    ]
+  },
+  {
+    "text": "Sachin Tendulkar is a famous cricketer from India.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "label": "PERSON"
+      },
+      {
+        "start": 46,
+        "end": 51,
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "text": "The Great Wall of China is a famous landmark.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 25,
+        "label": "LOC"
+      }
+    ]
+  },
+  {
+    "text": "Toyota is a major car manufacturer from Japan.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "label": "ORG"
+      },
+      {
+        "start": 41,
+        "end": 46,
+        "label": "GPE"
+      }
+    ]
+  }
+]

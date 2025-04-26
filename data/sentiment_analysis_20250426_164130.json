@@ -1,0 +1,102 @@
+[
+  {
+    "text": "This movie was absolutely fantastic!",
+    "label": "positive"
+  },
+  {
+    "text": "I found the service to be quite poor.",
+    "label": "negative"
+  },
+  {
+    "text": "The food was okay, nothing special.",
+    "label": "neutral"
+  },
+  {
+    "text": "A truly amazing experience from start to finish.",
+    "label": "positive"
+  },
+  {
+    "text": "I was very disappointed with the product.",
+    "label": "negative"
+  },
+  {
+    "text": "The acting was superb, I really enjoyed it.",
+    "label": "positive"
+  },
+  {
+    "text": "This is the worst book I've ever read.",
+    "label": "negative"
+  },
+  {
+    "text": "It was an average performance, neither good nor bad.",
+    "label": "neutral"
+  },
+  {
+    "text": "Highly recommend this to everyone!",
+    "label": "positive"
+  },
+  {
+    "text": "I regret wasting my money on this.",
+    "label": "negative"
+  },
+  {
+    "text": "The atmosphere was pleasant and relaxing.",
+    "label": "positive"
+  },
+  {
+    "text": "The noise level was unbearable.",
+    "label": "negative"
+  },
+  {
+    "text": "It met my expectations, nothing more.",
+    "label": "neutral"
+  },
+  {
+    "text": "A delightful and heartwarming story.",
+    "label": "positive"
+  },
+  {
+    "text": "The plot was confusing and illogical.",
+    "label": "negative"
+  },
+  {
+    "text": "The coffee was lukewarm and weak.",
+    "label": "negative"
+  },
+  {
+    "text": "Such a wonderful and inspiring film!",
+    "label": "positive"
+  },
+  {
+    "text": "The staff were rude and unhelpful.",
+    "label": "negative"
+  },
+  {
+    "text": "It was a decent attempt, but could have been better.",
+    "label": "neutral"
+  },
+  {
+    "text": "I absolutely loved every minute of it!",
+    "label": "positive"
+  },
+  {
+    "text": "This is simply unacceptable.",
+    "label": "negative"
+  },
+  {
+    "text": "The presentation was adequate.",
+    "label": "neutral"
+  },
+  {
+    "text": "A truly exceptional piece of work.",
+    "label": "positive"
+  },
+  {
+    "text": "I was thoroughly unimpressed.",
+    "label": "negative"
+  },
+  {
+    "text": "It was neither good nor bad, just okay.",
+    "label": "neutral"
+  }
+]

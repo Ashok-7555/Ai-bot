@@ -1,0 +1,122 @@
+[
+  {
+    "image_id": "12345.jpg",
+    "caption": "A fluffy white dog running in a park."
+  },
+  {
+    "image_id": "67890.png",
+    "caption": "A colorful sunset over the ocean."
+  },
+  {
+    "image_id": "13579.jpeg",
+    "caption": "A plate of delicious pasta with tomatoes and basil."
+  },
+  {
+    "image_id": "24680.gif",
+    "caption": "A group of people laughing together."
+  },
+  {
+    "image_id": "98765.bmp",
+    "caption": "A majestic mountain range covered in snow."
+  },
+  {
+    "image_id": "11223.tiff",
+    "caption": "A close-up of a vibrant red flower."
+  },
+  {
+    "image_id": "44556.webp",
+    "caption": "A busy street in a modern city at night."
+  },
+  {
+    "image_id": "77889.heic",
+    "caption": "A wooden boat sailing on a calm lake."
+  },
+  {
+    "image_id": "10101.raw",
+    "caption": "A baby sleeping peacefully in a crib."
+  },
+  {
+    "image_id": "20202.svg",
+    "caption": "A minimalist abstract painting with blue and yellow shapes."
+  },
+  {
+    "image_id": "30303.ico",
+    "caption": "A simple icon of a house."
+  },
+  {
+    "image_id": "40404.psd",
+    "caption": "A layered image of a landscape with text overlays."
+  },
+  {
+    "image_id": "50505.ai",
+    "caption": "A vector illustration of a cartoon character."
+  },
+  {
+    "image_id": "60606.indd",
+    "caption": "A page layout design for a magazine article."
+  },
+  {
+    "image_id": "70707.xcf",
+    "caption": "An image being edited with various tools visible."
+  },
+  {
+    "image_id": "80808.kra",
+    "caption": "A digital painting of a fantasy creature."
+  },
+  {
+    "image_id": "90909.blend",
+    "caption": "A 3D rendering of a futuristic vehicle."
+  },
+  {
+    "image_id": "11112.obj",
+    "caption": "A wireframe model of a human head."
+  },
+  {
+    "image_id": "22223.mtl",
+    "caption": "Material properties for a 3D object."
+  },
+  {
+    "image_id": "33334.fbx",
+    "caption": "An animated 3D character walking."
+  },
+  {
+    "image_id": "44445.usd",
+    "caption": "A description of a virtual scene with multiple objects."
+  },
+  {
+    "image_id": "55556.glb",
+    "caption": "A 3D model of a building that can be viewed in AR."
+  },
+  {
+    "image_id": "66667.hdr",
+    "caption": "A high dynamic range image of an interior scene."
+  },
+  {
+    "image_id": "77778.exr",
+    "caption": "A multi-layer openEXR image for compositing."
+  },
+  {
+    "image_id": "88889.jxr",
+    "caption": "A high-resolution photograph of a bird in flight."
+  },
+  {
+    "image_id": "99990.wdp",
+    "caption": "A compressed image with good quality."
+  },
+  {
+    "image_id": "12121.jp2",
+    "caption": "An image compressed using JPEG 2000 standard."
+  },
+  {
+    "image_id": "23232.tiff",
+    "caption": "A high-fidelity scanned document."
+  },
+  {
+    "image_id": "34343.png",
+    "caption": "A transparent image of a logo."
+  },
+  {
+    "image_id": "45454.gif",
+    "caption": "A short animated sequence of a bouncing ball."
+  }
+]

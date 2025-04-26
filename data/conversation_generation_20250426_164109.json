@@ -1,0 +1,254 @@
+[
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Hello, how are you?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "I am doing well, thank you. How can I help you today?"
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What's the weather like in Mumbai?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "The current temperature in Mumbai is 32 degrees Celsius and it is mostly sunny."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Can you tell me a joke?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Why don't scientists trust atoms? Because they make up everything!"
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What time is it?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "The current time is 9:44 PM."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Thank you for your help."
+      },
+      {
+        "speaker": "bot",
+        "utterance": "You're welcome!"
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "I want to book a flight to Delhi."
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Okay, where are you flying from?"
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What is the capital of India?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "The capital of India is New Delhi."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Tell me something interesting."
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Honey never spoils."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "How do I make a cup of tea?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "First, boil some water. Then, add a tea bag or loose tea leaves and let it steep for a few minutes. You can add milk and sugar if you like."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What are the latest news headlines?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "I'm sorry, I don't have access to real-time news updates."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Could you recommend a good restaurant?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "What kind of cuisine are you in the mood for?"
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What is the meaning of life?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "That's a philosophical question with many different answers!"
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Set a reminder for tomorrow at 9 AM."
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Okay, I've set a reminder for tomorrow at 9 AM."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What is the capital of Australia?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "The capital of Australia is Canberra."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Play some music."
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Okay, playing a random selection now."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "How to learn a new language?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "There are many ways! Consistency, immersion, practice, and using resources like apps and books are all helpful."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What is the weather forecast for Bangalore tomorrow?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Tomorrow in Bangalore, the forecast is for partly cloudy skies with a high of 34 degrees Celsius and a low of 22 degrees Celsius."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Tell me a fun fact."
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Octopuses have three hearts."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Navigate me to the nearest coffee shop."
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Sure, I'm finding the nearest coffee shops for you now. One moment."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "What are the symptoms of the common cold?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "Common symptoms include a runny nose, sore throat, cough, and sneezing."
+      }
+    ]
+  },
+  {
+    "dialogue": [
+      {
+        "speaker": "user",
+        "utterance": "Can you translate 'thank you' to Hindi?"
+      },
+      {
+        "speaker": "bot",
+        "utterance": "'Thank you' in Hindi is 'dhanyavaad' (\u0927\u0928\u094d\u092f\u0935\u093e\u0926)."
+      }
+    ]
+  }
+]

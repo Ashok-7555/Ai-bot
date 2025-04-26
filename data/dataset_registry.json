@@ -1,0 +1,42 @@
+{
+  "sentiment_analysis": {
+    "sentiment_analysis_20250426_164109": {
+      "path": "/home/runner/workspace/data/sentiment_analysis_20250426_164109.json",
+      "examples": 25,
+      "timestamp": "2025-04-26T16:41:09.428430",
+      "name": "sentiment_analysis_20250426_164109"
+    }
+  },
+  "entity_recognition": {
+    "entity_recognition_20250426_164109": {
+      "path": "/home/runner/workspace/data/entity_recognition_20250426_164109.json",
+      "examples": 22,
+      "timestamp": "2025-04-26T16:41:09.431466",
+      "name": "entity_recognition_20250426_164109"
+    }
+  },
+  "question_answering": {
+    "question_answering_20250426_164109": {
+      "path": "/home/runner/workspace/data/question_answering_20250426_164109.json",
+      "examples": 20,
+      "timestamp": "2025-04-26T16:41:09.435159",
+      "name": "question_answering_20250426_164109"
+    }
+  },
+  "conversation_generation": {
+    "conversation_generation_20250426_164109": {
+      "path": "/home/runner/workspace/data/conversation_generation_20250426_164109.json",
+      "examples": 21,
+      "timestamp": "2025-04-26T16:41:09.440696",
+      "name": "conversation_generation_20250426_164109"
+    }
+  },
+  "image_captioning": {
+    "image_captioning_20250426_164109": {
+      "path": "/home/runner/workspace/data/image_captioning_20250426_164109.json",
+      "examples": 30,
+      "timestamp": "2025-04-26T16:41:09.454578",
+      "name": "image_captioning_20250426_164109"
+    }
+  }
+}

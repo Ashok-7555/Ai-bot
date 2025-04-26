@@ -1,0 +1,122 @@
+[
+  {
+    "context": "The quick brown fox jumps over the lazy dog.",
+    "question": "What does the fox jump over?",
+    "answer": "the lazy dog",
+    "answer_start": 29
+  },
+  {
+    "context": "Albert Einstein was born in Ulm, Germany on March 14, 1879.",
+    "question": "Where was Albert Einstein born?",
+    "answer": "Ulm, Germany",
+    "answer_start": 21
+  },
+  {
+    "context": "The capital of France is Paris.",
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "answer_start": 20
+  },
+  {
+    "context": "The first manned flight was achieved by the Wright brothers in 1903.",
+    "question": "Who achieved the first manned flight?",
+    "answer": "the Wright brothers",
+    "answer_start": 37
+  },
+  {
+    "context": "Water boils at 100 degrees Celsius at standard atmospheric pressure.",
+    "question": "At what temperature does water boil?",
+    "answer": "100 degrees Celsius",
+    "answer_start": 15
+  },
+  {
+    "context": "The Indian Space Research Organisation (ISRO) is headquartered in Bangalore.",
+    "question": "Where is ISRO headquartered?",
+    "answer": "Bangalore",
+    "answer_start": 63
+  },
+  {
+    "context": "The currency of Japan is the Yen.",
+    "question": "What is the currency of Japan?",
+    "answer": "the Yen",
+    "answer_start": 24
+  },
+  {
+    "context": "The Amazon rainforest is located in South America.",
+    "question": "Where is the Amazon rainforest located?",
+    "answer": "South America",
+    "answer_start": 35
+  },
+  {
+    "context": "The novel 'Pride and Prejudice' was written by Jane Austen.",
+    "question": "Who wrote 'Pride and Prejudice'?",
+    "answer": "Jane Austen",
+    "answer_start": 42
+  },
+  {
+    "context": "The largest planet in our solar system is Jupiter.",
+    "question": "What is the largest planet in our solar system?",
+    "answer": "Jupiter",
+    "answer_start": 37
+  },
+  {
+    "context": "Photosynthesis is the process by which green plants use sunlight to synthesize foods.",
+    "question": "What do green plants use sunlight for in photosynthesis?",
+    "answer": "to synthesize foods",
+    "answer_start": 56
+  },
+  {
+    "context": "The Taj Mahal was built by Mughal emperor Shah Jahan in memory of his wife.",
+    "question": "Who built the Taj Mahal?",
+    "answer": "Mughal emperor Shah Jahan",
+    "answer_start": 19
+  },
+  {
+    "context": "The Pacific Ocean is the largest ocean on Earth.",
+    "question": "Which is the largest ocean on Earth?",
+    "answer": "The Pacific Ocean",
+    "answer_start": 0
+  },
+  {
+    "context": "Cricket is a popular sport in India, Australia, and England.",
+    "question": "In which countries is cricket a popular sport?",
+    "answer": "India, Australia, and England",
+    "answer_start": 28
+  },
+  {
+    "context": "The theory of relativity was proposed by Albert Einstein.",
+    "question": "Who proposed the theory of relativity?",
+    "answer": "Albert Einstein",
+    "answer_start": 39
+  },
+  {
+    "context": "The first computer programmer was Ada Lovelace.",
+    "question": "Who was the first computer programmer?",
+    "answer": "Ada Lovelace",
+    "answer_start": 29
+  },
+  {
+    "context": "The Himalayas are a mountain range in Asia.",
+    "question": "Where are the Himalayas located?",
+    "answer": "Asia",
+    "answer_start": 37
+  },
+  {
+    "context": "The chemical symbol for water is H2O.",
+    "question": "What is the chemical symbol for water?",
+    "answer": "H2O",
+    "answer_start": 31
+  },
+  {
+    "context": "The Renaissance was a period of great cultural and artistic flourishing in Europe.",
+    "question": "Where did the Renaissance flourish?",
+    "answer": "Europe",
+    "answer_start": 66
+  },
+  {
+    "context": "The speed of light in a vacuum is approximately 299,792,458 meters per second.",
+    "question": "What is the approximate speed of light in a vacuum?",
+    "answer": "approximately 299,792,458 meters per second",
+    "answer_start": 33
+  }
+]
