@@ -1,0 +1,40 @@
+{
+    "default_model": "gpt2",
+    "alternative_models": [
+        "distilgpt2",
+        "microsoft/DialoGPT-small"
+    ],
+    "kaggle_models": [
+        "qwen-lm/qwq-32b/transformers/qwq-32b"
+    ],
+    "trained_models_dir": "./models/trained",
+    "generation_settings": {
+        "max_new_tokens": 150,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "no_repeat_ngram_size": 2
+    },
+    "training_defaults": {
+        "batch_size": 4,
+        "learning_rate": 5e-5,
+        "epochs": 3
+    },
+    "sample_datasets": [
+        {
+            "name": "General Knowledge QA",
+            "description": "Common knowledge questions and answers",
+            "path": "datasets/general_knowledge.json"
+        },
+        {
+            "name": "Conversation Examples",
+            "description": "Example conversations in various styles",
+            "path": "datasets/conversations.json"
+        }
+    ],
+    "auto_training": {
+        "enabled": true,
+        "schedule": "daily",
+        "max_data_points": 1000,
+        "min_confidence_threshold": 0.7
+    }
+}
